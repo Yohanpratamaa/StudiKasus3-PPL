@@ -6,7 +6,7 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
 
-class LoginTets extends DuskTestCase
+class ShowNotesTest extends DuskTestCase
 {
     /**
      * A Dusk test example.
@@ -20,7 +20,8 @@ class LoginTets extends DuskTestCase
                     ->type('email', 'jd12@example.com')
                     ->type('password', 'password12')
                     ->press('LOG IN')
-                    ->assertPathIs('/dashboard');
+                    ->assertPathIs('/dashboard')
+                    ->clickLink('Notes');
         });
     }
 }
